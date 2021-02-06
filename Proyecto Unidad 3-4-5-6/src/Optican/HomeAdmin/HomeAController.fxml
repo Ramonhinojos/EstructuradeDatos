@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane id="adminWin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" stylesheets="@../base.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Optican.HomeAdmin.HomeAController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="top" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="170.0" fitWidth="422.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/Images.jpg" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label onMouseClicked="#returnLogin" prefHeight="30.0" prefWidth="586.0" text="Veterinaria el Lago ">
+               <HBox.margin>
+                  <Insets left="10.0" top="60.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="135.0" prefWidth="57.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <GridPane alignment="TOP_CENTER" stylesheets="@../base.css" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TabPane prefHeight="373.0" prefWidth="600.0" styleClass="bottom" stylesheets="@../base.css" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab id="tab" text="Información">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="adminBottom">
+                           <children>
+                              <TextField fx:id="txName" promptText="Nombre y apellido del dueño de la mascota" stylesheets="@../base.css">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="txLName" promptText="Nombre de la mascota" stylesheets="@../base.css">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="txAge" promptText="Edad de la mascota (meses)" stylesheets="@../base.css">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="txKG" promptText="Peso (kg)" stylesheets="@../base.css">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="txCM" promptText="Altura (cm)" stylesheets="@../base.css">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></TextField>
+                              <TextField fx:id="txSS" promptText="Número de cartilla de la mascota" stylesheets="@../base.css">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin></TextField>
+                              <Button mnemonicParsing="false" onAction="#addCita" stylesheets="@../base.css" text="Agregar">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin></Button>
+                              <ListView fx:id="listPatient" prefHeight="260.0" prefWidth="600.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atención médica" wrappingWidth="105.6640625" />
+                           </children>
+                        </VBox>
+                     </content>
+                </Tab>
+                  <Tab id="tab" text="Búsqueda de Pacientes">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField fx:id="txSearch" promptText="Número de cartilla de la mascota">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="105.0" text="Buscar">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Pane prefHeight="90.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
+                              <Label fx:id="lbPatient">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lbPatient2" layoutX="310.0" layoutY="404.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                <Tab id="tab" text="Citas">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="backgroundPaneAdmin">
+                           <children>
+                              <ListView fx:id="listCita" prefHeight="320.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                 </VBox.margin>
+                              </ListView>
+                              <Button layoutX="262.0" layoutY="417.0" mnemonicParsing="false" onAction="#deleteCita" text="Cita terminada">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </content>
+                </Tab>
+                  <Tab id="tab" text="Pronóstico de Enfermedades">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="180.0">
+                                       <children>
+                                          <TextField fx:id="txSickName" promptText="Nombre de la enfermedad">
+                                             <opaqueInsets>
+                                                <Insets top="10.0" />
+                                             </opaqueInsets>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Button layoutX="68.0" layoutY="73.0" mnemonicParsing="false" onAction="#addSick" prefHeight="27.0" prefWidth="105.0" text="Añadir" />
+                                       </children>
+                                    </Pane>
+                                    <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="180.0">
+                                       <children>
+                                          <TextField fx:id="txSickTotal" layoutX="10.0" layoutY="60.0" promptText="Total de enfermos">
+                                             <opaqueInsets>
+                                                <Insets top="10.0" />
+                                             </opaqueInsets>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab id="tab" onSelectionChanged="#stadistic" text="Estadísticas">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ListView fx:id="listSicks" prefHeight="450.0" prefWidth="590.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </ListView>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

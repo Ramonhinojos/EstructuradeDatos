@@ -1,0 +1,25 @@
+.root{
+    opticanBlue: #027abb;
+    materialGrey: rgb(219,219,219);
+}
+.main { -fx-background-color: linear-gradient(derive(opticanBlue , 100%) , ghostwhite  ); }
+.top {
+    -fx-background-color: linear-gradient(derive(opticanBlue , 100%), materialGrey );
+    -fx-border-color: opticanBlue transparent materialGrey transparent;
+}
+.bottom{ -fx-background-color: ghostwhite; }
+
+Button {
+    -fx-border-color: derive(opticanBlue, 115%);
+    -fx-background-color: derive(opticanBlue, 137%);
+    -fx-border-radius: 10px;
+}
+ListView { -fx-background-color: derive(ghostwhite, 50%); }
+TextField { -fx-background-color: derive(ghostwhite, 55%); }
+ComboBox {
+    -fx-border-radius: 5px;
+    -fx-border-color: derive(materialGrey, 20%);
+    -fx-background-color: derive(opticanBlue, 137%);
+}
+
+#tab { -fx-background-color: derive(materialGrey, 20%); }
